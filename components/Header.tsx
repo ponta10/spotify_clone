@@ -6,6 +6,7 @@ import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import Button from "./Button";
+import useAuthModal from "@/hooks/useAuthModal";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -14,6 +15,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const router = useRouter();
+  const authModal = useAuthModal();
 
   //   const handleLogout = () => {};
   return (
@@ -53,10 +55,10 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         </div>
         <div className='flex justify-between items-center gap-x-4'>
             <div>
-                <Button onClick={() => {}} className='bg-transparent text-neutral-300 font-medium'>Sign Up!</Button>
+                <Button onClick={authModal.onOpen} className='bg-transparent text-neutral-300 font-medium'>Sign Up!</Button>
             </div>
             <div>
-                <Button onClick={() => {}} className='bg-white px-6 py-2 text-black'>Login!</Button>
+                <Button onClick={authModal.onOpen} className='bg-white px-6 py-2 text-black'>Login!</Button>
             </div>
         </div>
       </div>
