@@ -1,4 +1,4 @@
-import getSongsByTitle from "@/action/getSongsByTitle";
+import getSongsByTitle from "@/actions/getSongsByTitle";
 import SearchInput from "@/components/SearchInput";
 import Header from "@/components/Header";
 
